@@ -1,0 +1,14 @@
+1.拉取镜像  
+    docker pull mongo
+2. 运行镜像
+   docker run -d -p 27016:27017 --name mongo01 -v D:\MongoDB\data\db:/data/db -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=admin mongo --wiredTigerCacheSizeGB 1.5
+
+
+
+--wiredTigerCacheSizeGB 1.5  设置WiredTiger缓存大小限制。生产环境可取消设置
+
+-v D:\MongoDB\data\db:/data/db   数据磁盘映射
+
+-e MONGO_INITDB_ROOT_USERNAME=admin  设置环境变量 用户名
+
+-e MONGO_INITDB_ROOT_PASSWORD=admin  设置环境变量 密码
